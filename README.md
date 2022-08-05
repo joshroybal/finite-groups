@@ -54,7 +54,7 @@ no. of divisiors of |z/26Z| = 6
 <br>
 Display a table giving some information about residue groups modulo k up to n.<br>
 Example:<br>
-Usaage: sbcl --scrupt tablulate.lisp 26<br>
+Usaage: sbcl --scrupt tablulate.lisp n<br>
 <pre>
 sbcl --script tabulate.lisp 26
                                    order
