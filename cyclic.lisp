@@ -174,11 +174,12 @@
   "Procedure pretty-prints Cayley Table."
   (let* ((table (cayley-table (sort group #'<) n))
 	 (width (length (write-to-string (reduce #'max group))))
-	 (fmt (get-format (1+ width))))
+	 (fmt (concatenate 'string "~" (write-to-string (1+ width)) "d"))
+	 (afmt (concatenate 'string "~" (write-to-string (1+ width)) "@a")))
     (progn
       (format t "~&Cayley Table")
       (format t "~&")
-      (format t fmt "*")
+      (format t afmt "*")
       (dolist (i group)
 	(format t fmt i))
       (do ((g group (cdr g))
@@ -196,7 +197,6 @@
 
 (defun print-subgroup (key value)
   (format t "~&<~d> = ~S" key value))
-
 
 (defun group-report (n)
   "Procedure displays strucutre of multiplicative group of integers mod n."
@@ -241,9 +241,6 @@
       (format t "~&no. of divisiors of |z/~dZ| = ~d" n
 	      (length (divisors-list (length group))))
       'done)))
-
-(defun get-format (n)
-  (concatenate 'string "~" (write-to-string n) "d"))
 
 (defun tabulate (n)
   (progn
