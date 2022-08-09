@@ -3,12 +3,12 @@ Pretty print a Cayley Table and some other info about the multiplicative group o
 Usage: sbcl --script report.lisp n<br>
 Example:<br>
 <pre>
-sbcl --script report.lisp 26
+D:\src\CL\cyclic>sbcl --script report.lisp 26
 z/26Z = (1 3 5 7 9 11 15 17 19 21 23 25)
 |z/26Z| = 12
 divisors of |z/26Z| = (1 2 3 4 6 12)
 Cayley Table
-*  1  3  5  7  9 11 15 17 19 21 23 25
+  *  1  3  5  7  9 11 15 17 19 21 23 25
   1  1  3  5  7  9 11 15 17 19 21 23 25
   3  3  9 15 21  1  7 19 25  5 11 17 23
   5  5 15 25  9 19  3 23  7 17  1 11 21
