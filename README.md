@@ -57,7 +57,8 @@ distict cyclic subgroups
 no. of distinct subgroups = 4
 divisors of |Z10| = (1 2 5 10)
 no. of divisors of |Z10| = 4
-
+</pre>
+<pre>
 sbcl --script driver.lisp multiplicative 10
 Z/10Z = (1 3 7 9)
 |Z/10Z| = 4
