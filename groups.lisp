@@ -189,7 +189,7 @@
 		      #\tab symbol-string (car g) (/ order (length g)))
 	      ))))
       (format t "~%~%")
-      (format t "~&distict cyclic subgroups")
+      (format t "~&distinct cyclic subgroups")
       (let ((dsg (distinct-subgroups group)))
 	(progn
 	  (dolist (sg dsg)
