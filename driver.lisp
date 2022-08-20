@@ -27,6 +27,10 @@
        (setf *group* (groups:multiplicative-group *n*))
        (setf *symbol-string* (concatenate 'string "Z/" (third *posix-argv*) "Z"))
        (setf *operation-string* "*"))
+      ((equalp *type* "permutation")
+       (setf *group* (groups:permutation-group *n*))
+       (setf *symbol-string* (concatenate 'string "S" (third *posix-argv*)))
+       (setf *operation-string* (string #\GREEK_SMALL_LETTER_SIGMA)))
       (t
        (format *error-output* "group type not supported")
        (quit)))
