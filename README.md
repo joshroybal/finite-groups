@@ -1,6 +1,6 @@
 # finite groups package
 Pretty print info about finite algebraic groups.<br>
-Supported finite groups: additive and multiplicative groups congruent modulo n.<br>
+Supported finite groups: additive and multiplicative groups congruent modulo n, and permutation groups Sn.<br>
 Usage: sbcl --script group-type n<br>
 groups.lisp and driver.lisp should be in the same directory.<br>
 Example runs.<br>
@@ -58,6 +58,7 @@ no. of distinct subgroups = 4
 divisors of |Z10| = (1 2 5 10)
 no. of divisors of |Z10| = 4
 </pre>
+<br>
 <pre>
 sbcl --script driver.lisp multiplicative 10
 Z/10Z = (1 3 7 9)
@@ -92,4 +93,49 @@ distict cyclic subgroups
 no. of distinct subgroups = 3
 divisors of |Z/10Z| = (1 2 4)
 no. of divisors of |Z/10Z| = 3
+</pre>
+<br>
+<pre>
+sbcl --script driver.lisp permutation 3
+S3 = ((1 2 3) (1 3 2) (2 1 3) (2 3 1) (3 1 2) (3 2 1))
+|S3| = 6
+
+Cayley Table
+       σ (1 2 3) (1 3 2) (2 1 3) (2 3 1) (3 1 2) (3 2 1)
+ (1 2 3) (1 2 3) (1 3 2) (2 1 3) (2 3 1) (3 1 2) (3 2 1)
+ (1 3 2) (1 3 2) (1 2 3) (3 1 2) (3 2 1) (2 1 3) (2 3 1)
+ (2 1 3) (2 1 3) (2 3 1) (1 2 3) (1 3 2) (3 2 1) (3 1 2)
+ (2 3 1) (2 3 1) (2 1 3) (3 2 1) (3 1 2) (1 2 3) (1 3 2)
+ (3 1 2) (3 1 2) (3 2 1) (1 3 2) (1 2 3) (2 3 1) (2 1 3)
+ (3 2 1) (3 2 1) (3 1 2) (2 3 1) (2 1 3) (1 3 2) (1 2 3)
+
+S3 is not Abelian.
+S3 is not cyclic.
+
+cyclic subgroups
+<(1 2 3)> = ((1 2 3))
+<(1 3 2)> = ((1 3 2) (1 2 3))
+<(2 1 3)> = ((2 1 3) (1 2 3))
+<(2 3 1)> = ((2 3 1) (3 1 2) (1 2 3))
+<(3 1 2)> = ((3 1 2) (2 3 1) (1 2 3))
+<(3 2 1)> = ((3 2 1) (1 2 3))
+
+|<(1 2 3)>| = 1         |S3|/|<(1 2 3)>| = 6
+|<(1 3 2)>| = 2         |S3|/|<(1 3 2)>| = 3
+|<(2 1 3)>| = 2         |S3|/|<(2 1 3)>| = 3
+|<(2 3 1)>| = 3         |S3|/|<(2 3 1)>| = 2
+|<(3 1 2)>| = 3         |S3|/|<(3 1 2)>| = 2
+|<(3 2 1)>| = 2         |S3|/|<(3 2 1)>| = 3
+
+distict cyclic subgroups
+((1 2 3))
+((1 3 2) (1 2 3))
+((2 1 3) (1 2 3))
+((2 3 1) (3 1 2) (1 2 3))
+((3 1 2) (2 3 1) (1 2 3))
+((3 2 1) (1 2 3))
+
+no. of distinct subgroups = 6
+divisors of |S3| = (1 2 3 6)
+no. of divisors of |S3| = 4
 </pre>
